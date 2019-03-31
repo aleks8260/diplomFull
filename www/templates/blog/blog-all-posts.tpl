@@ -11,14 +11,10 @@
 		<?php } ?>
 		
 	</div>
-	<div class="row justify-content-between mb-50">
+	<div class="row mb-50">
 		<?php foreach ($posts as $post){ ?>
-<!-- 		<?php
-				echo "<pre>";
-				print_r($post);
-				echo "</pre>";
-		?> -->
 			<?php include ROOT . "templates/_parts/_blog-card.tpl" ?>
 		<?php } ?>
+		
 	</div>
 </div>

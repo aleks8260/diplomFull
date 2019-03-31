@@ -1,3 +1,24 @@
+<?php
+	function showIndicator($title, $value, $color = ''){
+		$offset = 289 * (1 - intval($value)/100);
+		
+	?>
+	<!-- value - индикатор счета нашего (дэшоффсет) -->
+		<div class="indicator">
+			<svg class="circle" viewbox="0 0 112 112">
+				<circle class="circle_1" cx="56" cy="56" r="46"></circle>
+			 	<circle 
+				<?php if($color == ''){ ?>
+					class="circle_2 circle_2--<?=$color?>" 
+				<? }else{ ?>
+					class="circle_2 circle_2--<?=$color?>"
+				<?php } ?>
+				stroke-dashoffset="<?=$offset?>" cx="56" cy="56" r="46"></circle>
+			</svg>
+			<div class="indicator__value"><?=$title?></div>
+	</div>
+
+<?php }?>
 <div class="bg-technology">
 	<div class="container user-content">
 		<div class="technology">
@@ -14,66 +35,87 @@
 			<div class="row mb-40">
 				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center">Frontend</div>
 				<div class="col-md-9">
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle-green" style="stroke-dashoffset:35.18;"> </circle>
-						</svg>
-						<div class="indicator__value">HTML5</div>
-					</div>
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle-green" style="stroke-dashoffset:130.92;"> </circle>
-						</svg>
-						<div class="indicator__value">CSS3</div>
-					</div>
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle-green" style="stroke-dashoffset:35.18;"> </circle>
-						</svg>
-						<div class="indicator__value">JS</div>
-					</div>
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle-green" style="stroke-dashoffset:0;"> </circle>
-						</svg>
-						<div class="indicator__value">jQuery</div>
-					</div>
+					<?php
+						if($skills['html'] != 0){
+							showIndicator('HTML5', $skills['html'], 'green');
+						}
+					?>
+					<?php
+						if($skills['css'] != 0){
+							showIndicator('CSS3', $skills['css'], 'green');
+						}
+					?>
+					<?php
+						if($skills['js'] != 0){
+							showIndicator('JS', $skills['js'], 'green');
+						}
+					?>
+					<?php
+						if($skills['jquery'] != 0){
+							showIndicator('jQuery', $skills['jquery'], 'green');
+						}
+					?>
+					<?php
+						if($skills['less'] != 0){
+							showIndicator('LESS', $skills['less'], 'green');
+						}
+					?>
+					<?php
+						if($skills['sass'] != 0){
+							showIndicator('SASS', $skills['sass'], 'green');
+						}
+					?>					
+					<?php
+						if($skills['bootstrap'] != 0){
+							showIndicator('Bootstrap', $skills['bootstrap'], 'green');
+						}
+					?>
 				</div>
+				
 			</div>
 			<div class="row mb-40">
 				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center">Backend</div>
 				<div class="col-md-9">
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle-blue" style="stroke-dashoffset:35.18;"></circle>
-						</svg>
-						<div class="indicator__value">PHP</div>
-					</div>
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle-blue" style="stroke-dashoffset:130.92;"></circle>
-						</svg>
-						<div class="indicator__value">MySql</div>
-					</div>
+					<?php
+						if($skills['php'] != 0){
+							showIndicator('PHP', $skills['php'], 'blue');
+						}
+					?>
+					<?php
+						if($skills['mysql'] != 0){
+							showIndicator('MySQL', $skills['mysql'], 'blue');
+						}
+					?>					
+					<?php
+						if($skills['wordpress'] != 0){
+							showIndicator('WordPress', $skills['wordpress'], 'blue');
+						}
+					?>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center">Workflow</div>
 				<div class="col-md-9">
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle circle-yellow" style="stroke-dashoffset:35.18;"></circle>
-						</svg>
-						<div class="indicator__value">Git</div>
-					</div>
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle circle-yellow" style="stroke-dashoffset:130.92;"></circle>
-						</svg>
-						<div class="indicator__value">Gulp</div>
-					</div>
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle circle-yellow" style="stroke-dashoffset:35.18;"></circle>
-						</svg>
-						<div class="indicator__value">Bower</div>
-					</div>
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
-							<circle class="circle circle circle-yellow" style="stroke-dashoffset:undefined;"></circle>
-						</svg>
-						<div class="indicator__value">WebPack</div>
-					</div>
+					<?php
+						if($skills['git'] != 0){
+							showIndicator('Git', $skills['git'], 'yellow');
+						}
+					?>
+					<?php
+						if($skills['gulp'] != 0){
+							showIndicator('Gulp', $skills['gulp'], 'yellow');
+						}
+					?>
+					<?php
+						if($skills['bower'] != 0){
+							showIndicator('Bower', $skills['bower'], 'yellow');
+						}
+					?>
+					<?php
+						if($skills['webpack'] != 0){
+							showIndicator('WebPack', $skills['webpack'], 'yellow');
+						}
+					?>
 				</div>
 			</div>
 		</div>

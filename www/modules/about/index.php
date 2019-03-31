@@ -2,6 +2,7 @@
 $title = "О авторе";
 
 $about = R::load('about', 1); // из таблицы about
+$skills = R::load('skills', 1); // из таблицы skills
 
 // Готовим контент для центральной части
 

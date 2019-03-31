@@ -3115,3 +3115,32 @@ table {
 .mr-330{
   margin-right: 330px !important; 
 }
+
+.circle{
+  width: 112px;
+  height: 112px;
+}
+
+
+.circle_1{
+  fill: transparent;
+  stroke-width: 10px;
+  stroke: rgba(226,226,226, 0.05)
+}
+.circle_2{
+  fill: transparent;
+  stroke-width: 10px;
+  stroke: rgba(255,255,255, 0.5);
+  stroke-dasharray: 289px; /*  длина окружности: 2*pi*r = 2*3,14*46=289 */
+/*  transform-origin: center center;  точка трансформации 
+  transform: rotate(-90deg);*/
+}
+.circle_2--green{
+  stroke: #3aaa35;
+}
+.circle_2--blue{
+  stroke: #009cf5;
+}
+.circle_2--yellow{
+  stroke: #ffcc00;
+}
