@@ -15,6 +15,8 @@
 		<?php foreach ($posts as $post){ ?>
 			<?php include ROOT . "templates/_parts/_blog-card.tpl" ?>
 		<?php } ?>
-		
+	</div>
+	<div class="row mb-50">
+		<?php include ROOT . "templates/_parts/_pagination.tpl" ?>
 	</div>
 </div>

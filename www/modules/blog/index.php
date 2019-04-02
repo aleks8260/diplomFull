@@ -1,7 +1,9 @@
-<?php 
+<?php
+$pagination = pagination(3, 'posts');
+
 $title = "Блог - все записи";
 // Массив постов из бд сортировка свежие впереди
-$posts = R::find('posts', 'ORDER BY id DESC');
+$posts = R::find('posts', 'ORDER BY id DESC ' . $pagination['sql_pages_limit']);
 
 // $content ="Содержимое блог страницы";
 
