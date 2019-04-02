@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 29 2019 г., 14:09
+-- Время создания: Апр 02 2019 г., 17:02
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.6.38
 
@@ -121,6 +121,47 @@ INSERT INTO `contacts` (`id`, `email`, `phone`, `address`, `name`, `secondname`,
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `educations`
+--
+
+CREATE TABLE `educations` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `period` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `description` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `educations`
+--
+
+INSERT INTO `educations` (`id`, `period`, `title`, `description`) VALUES
+(2, 'сентябрь 2011 &mdash; июль 2016', 'Инженер-электрик', 'Белорусский государственный университет транспорта, специальность: &quot;Автоматика, телемеханика и связь на железнодорожном транспорте&quot;'),
+(4, 'апрель 2018 &mdash; настоящее время', 'WEB-разработчик', 'Компьютерная академия шаг, \r\nизучение дисциплин: HTML, CSS, JS, PHP, CMS, SEO');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `period` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `jobs`
+--
+
+INSERT INTO `jobs` (`id`, `period`, `title`, `description`) VALUES
+(4, 'март 2018 &mdash; настоящее время', 'Инженер региональной дистанционной технической поддержки', '- предоставлять клиентам детальные консультации по высокотехнологичным услугам \r\n- диагностика и настройка оборудования с услугами компании (интернет, IPTV, VoIP, внутренние ресурсы, видеомониторинг)');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `messages`
 --
 
@@ -144,9 +185,7 @@ INSERT INTO `messages` (`id`, `email`, `name`, `message`, `message_file_name_ori
 (3, 'velcom.ale@gmail.com', 'Russian', 'twta', 'VDmzqa8sxKg.jpg', '142764282.jpg', NULL),
 (4, 'developer8260@gmail.com', 'Алексей', '123', '27bb0b4a26b85a693d36aa77c2889524.zip', '423547363.zip', NULL),
 (5, '123@gma.ru', 'Кексик', '12', '27bb0b4a26b85a693d36aa77c2889524.zip', '151498413.zip', NULL),
-(6, '1251', '52151', '12515', '27bb0b4a26b85a693d36aa77c2889524.zip', '272705078.zip', NULL),
-(7, '12345', 'Кексик', '1424214', '27bb0b4a26b85a693d36aa77c2889524.zip', '412698364.zip', '2019-03-29 11:25:17'),
-(8, '12412412', '21414214', '41241412', 'VDmzqa8sxKg.jpg', '761871337.jpg', '2019-03-29 11:42:24');
+(6, '1251', '52151', '12515', '27bb0b4a26b85a693d36aa77c2889524.zip', '272705078.zip', NULL);
 
 -- --------------------------------------------------------
 
@@ -179,6 +218,37 @@ INSERT INTO `posts` (`id`, `title`, `text`, `author_id`, `date_time`, `post_img`
 (9, 'Парк находится в горах Сьерра-Невада на востоке штата Калифорния и занимает огромную даже для Америки площадь, около 3000 кв. км. На этой площади расположены гранитные скальные стены огромной высоты, которыми, собственно, в первую очередь и знаменит парк, водопады, среди которых одни из самых высоких в США, три рощи гигантской секвойи &mdash; самого долгоживущего в мире дерева и самого большого по диаметру ствола, а также масса рек, озёр, лесов и лугов.', 'Парк находится в горах Сьерра-Невада на востоке штата Калифорния и занимает огромную даже для Америки площадь, около 3000 кв. км. На этой площади расположены гранитные скальные стены огромной высоты, которыми, собственно, в первую очередь и знаменит парк, водопады, среди которых одни из самых высоких в США, три рощи гигантской секвойи — самого долгоживущего в мире дерева и самого большого по диаметру ствола, а также масса рек, озёр, лесов и лугов.', 1, '2019-03-27 21:19:16', '562991333.png', '320-562991333.png', '1', NULL),
 (15, '123555555555555555555', '<p>123</p>\r\n', 1, '2019-03-28 18:46:10', NULL, NULL, '8', '2019-03-28 18:47:48'),
 (16, 'тест444', '<p>12344</p>\r\n', 1, '2019-03-28 19:22:37', '981762695.jpg', '320-981762695.jpg', '2', '2019-03-28 19:22:57');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `skills`
+--
+
+CREATE TABLE `skills` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `html` int(11) UNSIGNED DEFAULT NULL,
+  `css` int(11) UNSIGNED DEFAULT NULL,
+  `js` int(11) UNSIGNED DEFAULT NULL,
+  `jquery` int(11) UNSIGNED DEFAULT NULL,
+  `php` int(11) UNSIGNED DEFAULT NULL,
+  `mysql` int(11) UNSIGNED DEFAULT NULL,
+  `git` int(11) UNSIGNED DEFAULT NULL,
+  `gulp` tinyint(1) UNSIGNED DEFAULT NULL,
+  `bower` tinyint(1) UNSIGNED DEFAULT NULL,
+  `webpack` tinyint(1) UNSIGNED DEFAULT NULL,
+  `less` int(11) UNSIGNED DEFAULT NULL,
+  `sass` tinyint(1) UNSIGNED DEFAULT NULL,
+  `bootstrap` int(11) UNSIGNED DEFAULT NULL,
+  `wordpress` int(11) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `skills`
+--
+
+INSERT INTO `skills` (`id`, `html`, `css`, `js`, `jquery`, `php`, `mysql`, `git`, `gulp`, `bower`, `webpack`, `less`, `sass`, `bootstrap`, `wordpress`) VALUES
+(1, 90, 90, 40, 40, 70, 50, 70, 0, 0, 0, 40, 0, 40, 50);
 
 -- --------------------------------------------------------
 
@@ -243,6 +313,18 @@ ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `educations`
+--
+ALTER TABLE `educations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `messages`
 --
 ALTER TABLE `messages`
@@ -254,6 +336,12 @@ ALTER TABLE `messages`
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `index_foreignkey_posts_author` (`author_id`);
+
+--
+-- Индексы таблицы `skills`
+--
+ALTER TABLE `skills`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `users`
@@ -290,6 +378,18 @@ ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT для таблицы `educations`
+--
+ALTER TABLE `educations`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `jobs`
+--
+ALTER TABLE `jobs`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
@@ -300,6 +400,12 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT для таблицы `skills`
+--
+ALTER TABLE `skills`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

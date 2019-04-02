@@ -21,6 +21,10 @@
 				</div>
 				<div class="about-me-description__content">
 					<?=$about['description']?>
+
+					<?php if(HOST != HOST){ ?>
+					<a href="#">Подробнее</a>
+			<?php	} ?>
 				</div>
 			</div>
 		</div>

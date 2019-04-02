@@ -2,7 +2,8 @@
 	<div class="message-container">
 		<div class="delete">
 			<!-- <a class="button button-delete button-small" href="#">Удалить</a> -->
-			<a class="button-red button-del button-small" href="#!">Удалить</a>
+			<!-- <a class="button-red button-del button-small" href="#!">Удалить</a> -->
+			<a class="button button-delete" href="<?=HOST?>contacts/message-delete?id=<?=$message['id']?>">Удалить</a>
 		</div>
 		<div class="message-date"><?=$message['date_time']?></div>
 		<div class="message-author">

@@ -74,11 +74,19 @@ switch ( $uri[0]) {
 
 	case 'edit-jobs':
 		include "modules/about/edit-jobs.php";
+		break;		
+
+	case 'about/job-delete':
+		include "modules/about/job-delete.php";
 		break;	
 
 	case 'edit-education':
 		include "modules/about/edit-education.php";
 		break;
+
+	case 'about/education-delete':
+		include "modules/about/education-delete.php";
+		break;	
 
 
 	// ::::: CONTACTS :::::
@@ -93,6 +101,10 @@ switch ( $uri[0]) {
 	case 'messages':
 		include "modules/contacts/messages.php";
 		break;
+
+	case 'contacts/message-delete':
+		include "modules/contacts/message-delete.php";
+		break;	
 
 	// ::::: CATEGORIES :::::
 

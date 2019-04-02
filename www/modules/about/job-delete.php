@@ -1,15 +1,21 @@
 <?php 
-$title = "О авторе";
+if(!isAdmin()){ 
+	header('Location: ' . HOST);
+	exit();
+}
+$title = "Удалить работу";
+$job = R::load('jobs', $_GET['id']);
+if(isset($_POST['jobDelete'])){
+	R::trash($job);
+	header('Location: ' . HOST . "edit-jobs?result=jobDeleted");
+	exit();
+}
 
-$about = R::load('about', 1); // из таблицы about
-$skills = R::load('skills', 1); // из таблицы skills
-$jobs = R::find('jobs', 'ORDER BY id DESC'); // работу
-$educations = R::find('educations', 'ORDER BY id DESC'); // образование
 // Готовим контент для центральной части
 
 ob_start(); // Буферезированный старт
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/about/about.tpl"; // Блог шаблон
+include ROOT . "templates/about/job-delete.tpl"; // Блог шаблон
 $content = ob_get_contents(); // Возвращаем контент в переменную
 ob_end_clean(); // Прекращаем вывод
 
