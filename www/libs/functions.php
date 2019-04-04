@@ -68,6 +68,11 @@ function mbCutString($string, $length, $postfix = '...', $endcoding = 'UTF-8'){
 	$result = mb_substr($temp, 0, $spacenPosition, $endcoding) . "...";
 	return $result;
 }
+// Функция формирования цены
+function price_format($price){
+	return number_format($price, 0, '', ' ');
+}
+
 // Функция преобразующая дату в красивый вид
 function rus_date() {
 	// Перевод

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 02 2019 г., 17:02
+-- Время создания: Апр 04 2019 г., 13:43
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.6.38
 
@@ -222,6 +222,30 @@ INSERT INTO `posts` (`id`, `title`, `text`, `author_id`, `date_time`, `post_img`
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `price` int(11) UNSIGNED DEFAULT NULL,
+  `price_old` int(11) UNSIGNED DEFAULT NULL,
+  `desc` text COLLATE utf8mb4_unicode_520_ci,
+  `img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `img_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `products`
+--
+
+INSERT INTO `products` (`id`, `title`, `price`, `price_old`, `desc`, `img`, `img_small`) VALUES
+(1, 'Создадим лендинг ПОД ВАШ бюджет, крутой и стильный дизайн', 500, 1000, 'Об этом кворке\r\n! ! ! Важно ! ! !\r\n\r\n\r\n\r\n\r\n\r\nДизайн-студия создаст для вас продающий лендинг максимально не дорого, с возможностью выбрать только необходимые опции!\r\n\r\nХотите увеличить продажи вашего товара или услуги в несколько раз? При этом бюджет ограничен? Закажите продающую посадочную страницу по вашему бюджету у профессионалов!\r\n\r\n* Супер-цена за 1 kwork *\r\n\r\nВ стоимость кворка входит:\r\n\r\n- Создание 1 экрана лендинга (в среднем 1000 пикселей)\r\n\r\n*большее количество экранов можно заказать ниже, в доп. услугах.\r\n\r\n- Создание лендинга из уже имеющегося, с доработками и улучшением дизайна.\r\n\r\n- Либо создание лендинга по аналогу сайта конкурента - мы сделаем похожий, но измененный дизайн (изменения шрифта, изменение расположения некоторых элементов сайта, картинок, цветовой гаммы).\r\n\r\n* Мега-акция: 2 месяца хостинга бесплатно *\r\n\r\nЗакажите лендинг на сумму выше 6.000 рублей и получите в подарок 2 месяца хостинга бесплатно!\r\n\r\nНиже смотрите доп. услуги. Их можно заказать дополнительно к вашему сайту.\r\n\r\nСделайте ваши услуги продаваемыми!\r\n\r\nНужно для заказа:\r\nВам остается всего лишь быть на связи, для уточнения деталей во время создания сайта, всё остальное сделаем мы.\r\n\r\nУслуга включает:\r\n Форма обратной связи\r\nСрок выполнения: 2 дня\r\nТип: Лендинг\r\nCMS: Самописная', '221355733.jpg', '320-221355733.jpg'),
+(2, 'Верстка страниц сайта по дизайн-макетам', 1002, 1500, 'Об этом кворке\r\nСверстаю сайт любой сложности по готовому дизайн-макету.\r\n\r\nНа выходе Вы получаете современную и адаптивную верстку, которая будет отлично выглядеть на всех типах устройств и во всех популярных браузерах.\r\n\r\nИтоговая цена зависит от сложности конкретного дизайна.\r\n\r\nПочему я?\r\nЧистый и структурированный код.\r\nСемантичная верстка\r\nАдекватные сроки\r\nВсегда на связи\r\nРаботаю с удовольствием\r\nНужно для заказа:\r\nОт Вас потребуется предоставить мне готовый дизайн-макет сайта.\r\n\r\nПосле выполнения работы я заливаю верстку на свой тестовый хостинг и отправляю Вам ссылку для проверки.', '539557856.jpg', '320-539557856.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `skills`
 --
 
@@ -266,21 +290,22 @@ CREATE TABLE `users` (
   `city` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `country` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `avatar` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `avatar_smail` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `avatar_smail` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `cart` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `secondname`, `city`, `country`, `avatar`, `avatar_smail`) VALUES
-(1, 'fiksik8260@gmail.com', '$2y$10$jjQjywf2Id/QuL/V/iqbsewVgQqfpoozRRqcqaJNbLwgY/2dkVTbq', 'admin', 'Алексей', 'Фиксик', 'Гомель', 'Республика Беларусь', '839764404.jpg', '48-839764404.jpg'),
-(3, 'test', '$2y$10$WWr3LHD4ogoVJR8c/y8iDOrLNLOQSitnhSiR9jEtayAapED6l9OEi', 'user', NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'velcom.ale@gmail.com', '$2y$10$t5JYC20zOShNmGm6WkzZMOMxJZ3kPLNYPcAZzTy97.55gXjsx.fd2', 'admin', 'Админ', 'Админыч', '', '', NULL, NULL),
-(7, 'developer8260@gmail.com', '$2y$10$M5PbAvwLdrXAb7ZXcNnvou/1cWAp/WziwJ4m5gUPr0Hg3hhabG25y', 'user', 'Кексик', 'Фиксик', 'Москва', 'Россия', '184237670.jpg', '48-184237670.jpg'),
-(8, '123', '$2y$10$aJe.BEk7cNb3r88OJ/Dkl.jKLSeuxFnsQ9Y0bIWRzn9uyppejBKDi', 'user', NULL, NULL, NULL, NULL, NULL, NULL),
-(9, '123@gma.ru', '$2y$10$DnOXdlOnG1ec9v0SzyYoaOBjb/Pj7FoiQlantXVw17da06r208Bjq', 'user', 'aleksey_an', 'Пользователь', 'папуасы', 'Африка', NULL, NULL),
-(10, 'dev123@gmail.com', '$2y$10$GWIWSbk2D0vpdmL56ykvOuNN9DqPgBv156QWEhLxfZKmBFxNPDcu6', 'user', 'Кексик', 'Пользователь', '', '', NULL, NULL);
+INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `secondname`, `city`, `country`, `avatar`, `avatar_smail`, `cart`) VALUES
+(1, 'fiksik8260@gmail.com', '$2y$10$jjQjywf2Id/QuL/V/iqbsewVgQqfpoozRRqcqaJNbLwgY/2dkVTbq', 'admin', 'Алексей', 'Фиксик', 'Гомель', 'Республика Беларусь', '839764404.jpg', '48-839764404.jpg', '{\"1\":3,\"2\":1}'),
+(3, 'test', '$2y$10$WWr3LHD4ogoVJR8c/y8iDOrLNLOQSitnhSiR9jEtayAapED6l9OEi', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'velcom.ale@gmail.com', '$2y$10$t5JYC20zOShNmGm6WkzZMOMxJZ3kPLNYPcAZzTy97.55gXjsx.fd2', 'admin', 'Админ', 'Админыч', '', '', NULL, NULL, NULL),
+(7, 'developer8260@gmail.com', '$2y$10$M5PbAvwLdrXAb7ZXcNnvou/1cWAp/WziwJ4m5gUPr0Hg3hhabG25y', 'user', 'Кексик', 'Фиксик', 'Москва', 'Россия', '184237670.jpg', '48-184237670.jpg', NULL),
+(8, '123', '$2y$10$aJe.BEk7cNb3r88OJ/Dkl.jKLSeuxFnsQ9Y0bIWRzn9uyppejBKDi', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, '123@gma.ru', '$2y$10$DnOXdlOnG1ec9v0SzyYoaOBjb/Pj7FoiQlantXVw17da06r208Bjq', 'user', 'aleksey_an', 'Пользователь', 'папуасы', 'Африка', NULL, NULL, NULL),
+(10, 'dev123@gmail.com', '$2y$10$GWIWSbk2D0vpdmL56ykvOuNN9DqPgBv156QWEhLxfZKmBFxNPDcu6', 'user', 'Кексик', 'Пользователь', '', '', NULL, NULL, NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -338,6 +363,12 @@ ALTER TABLE `posts`
   ADD KEY `index_foreignkey_posts_author` (`author_id`);
 
 --
+-- Индексы таблицы `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `skills`
 --
 ALTER TABLE `skills`
@@ -393,13 +424,19 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT для таблицы `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `skills`

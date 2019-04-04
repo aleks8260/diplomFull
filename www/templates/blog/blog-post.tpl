@@ -30,7 +30,7 @@
 					</div>
 					<?php if($post['post_img'] != ""){ ?>
 						<img class="blog-post__image" src="<?=HOST?>usercontent/blog/<?=$post['post_img']?>"/>
-						<div class="blog-post__content">
+						<div class="blog-post__content user-content--desc">
 							<?=$post['text']?>
 						</div>
 					<?php } else { ?>

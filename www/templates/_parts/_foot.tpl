@@ -1,5 +1,6 @@
 	<!-- build:jsLibs js/libs.js -->
 	<script src="<?=HOST?>templates/assets/libs/jquery/jquery.min.js"></script><!-- endbuild -->
+	<script src="<?=HOST?>libs/jquery.cookie.js"></script><!-- endbuild -->
 	<!-- build:jsVendor js/vendor.js -->
 	<script src="<?=HOST?>templates/assets/libs/jquery-custom-scrollbar/jquery.custom-scrollbar.js"></script>
 	<script src="<?=HOST?>templates/assets/js/custom-file-input.js"></script><!-- endbuild -->

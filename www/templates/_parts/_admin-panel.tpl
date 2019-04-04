@@ -15,7 +15,8 @@
 		</div>
 	</div>
 	<nav class="admin-panel-menu">
-		<a class="admin-panel-menu__link" href="<?=HOST?>blog/post-new"><i class="fas fa-plus-circle admin-panel-menu__icon"></i>Пост</a>
+		<a class="admin-panel-menu__link" href="<?=HOST?>blog/post-new"><i class="fas fa-plus-circle admin-panel-menu__icon"></i>Пост</a>		
+		<a class="admin-panel-menu__link" href="<?=HOST?>shop/new"><i class="fas fa-plus-circle admin-panel-menu__icon"></i>Товар</a>
 		<a class="admin-panel-menu__link" href="<?=HOST?>blog/categories"><i class="fas fa-folder admin-panel-menu__icon"></i>Категории</a>
 		<!-- <a class="admin-panel-menu__link" href="#"><i class="fas fa-plus-circle admin-panel-menu__icon"></i>Работа</a> -->
 		<a class="admin-panel-menu__link" href="<?=HOST?>about"><i class="fas fa-edit admin-panel-menu__icon"></i>Обо мне</a>

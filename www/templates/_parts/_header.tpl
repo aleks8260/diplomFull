@@ -27,6 +27,6 @@ isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 && $_SESSION['role'] 
 			include ROOT . "templates/_parts/_header-user-login-links.tpl";
 		}
 	?>
-
+<?php include( ROOT . "templates/_parts/_cart-in-header.tpl"); ?>
 </div>
 <!-- // Header для всех пользователей -->

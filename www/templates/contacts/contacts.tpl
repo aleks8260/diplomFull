@@ -62,5 +62,4 @@
 		</div>
 	</div>
 </div>
-<!-- <div class="map" id="map"></div>
-<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&amp;callback=initMap"></script> -->
+<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8a11f635a55621736336b2bc18176d1d3c1a900edb807485736111913260ae81&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>

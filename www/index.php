@@ -146,6 +146,41 @@ switch ( $uri[0]) {
 		include ROOT . "modules/blog/post.php";
 		break;
 
+	// SHOP
+	case 'shop': // все товары
+		include ROOT . "modules/shop/index.php";
+		break;
+
+	case 'shop/new': // создание нового товара
+		include ROOT . "modules/shop/item-new.php";
+		break;
+
+	case 'shop/item': // отдельная страница товара
+		include ROOT . "modules/shop/item.php";
+		break;
+
+	case 'shop/item-edit': // редактирование товара
+		include ROOT . "modules/shop/item-edit.php";
+		break;
+
+	case 'shop/item-delete': // удаление товара
+		include ROOT . "modules/shop/item-delete.php";
+		break;
+// SHOPPPPP
+// CART
+	case 'addtocart': // добавление в корзину
+		include ROOT . "modules/cart/addtocart.php";
+		break;
+
+	case 'cart': // добавление в корзину
+		include ROOT . "modules/cart/cart.php";
+		break;	
+
+	case 'removefromcart': // добавление в корзину
+		include ROOT . "modules/cart/removefromcart.php";
+		break;
+
+
 	default:
 		include ROOT . "modules/main/index.php";
 		break;

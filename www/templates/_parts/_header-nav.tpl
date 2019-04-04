@@ -18,6 +18,9 @@
 			</li>
 			<li class="navigation__item">
 				<a class="<?= ($uri[0] == "contacts") ? "active" : "" ?>" href="<?=HOST?>contacts">Контакты</a>
+			</li>			
+			<li class="navigation__item">
+				<a class="<?= ($uri[0] == "shop") ? "active" : "" ?>" href="<?=HOST?>shop">Магазин</a>
 			</li>
 		</ul>
 	</nav>
