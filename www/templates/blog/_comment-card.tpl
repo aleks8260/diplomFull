@@ -14,8 +14,8 @@
 				<?=$comment['secondname']?>
 			</div>
 			<div class="two-comments-container-block-wrap__date"><i class="far fa-clock two-comments-container-block-wrap-icon"></i>
-			<!-- <?=$comment['date_time']?> -->
-			<? echo rus_date("j F Y H:i", strtotime($post['date_time'])); ?>
+			<?=$comment['date_time']?>
+			<!-- <? echo rus_date("j F Y H:i", strtotime($post['date_time'])); ?> -->
 		</div>
 		</div>
 		<div class="two-comments-container-block__message"><?=$comment['text']?></div>

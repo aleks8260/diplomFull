@@ -179,6 +179,31 @@ switch ( $uri[0]) {
 	case 'removefromcart': // добавление в корзину
 		include ROOT . "modules/cart/removefromcart.php";
 		break;
+	// ORDERS
+	case 'order-create': // создание заказа
+		include ROOT . "modules/orders/order-create.php";
+		break;
+
+	case 'order-created-success': // перенаправление на успешно оформленный заказ
+		include ROOT . "modules/orders/order-created-success.php";
+		break;
+
+	case 'orders': // все заказы в админке
+		include ROOT . "modules/orders/orders.php";
+		break;
+
+	case 'order': // заказ по айди выводит в админке
+		include ROOT . "modules/orders/order.php";
+		break;
+
+	case 'myorders': // заказ по айди выводит в админке
+		include ROOT . "modules/orders/myorders.php";
+		break;
+
+	case 'myorder': // заказ по айди выводит пользователю
+		include ROOT . "modules/orders/myorder.php";
+		break;
+
 
 
 	default:

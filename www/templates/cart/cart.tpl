@@ -29,6 +29,7 @@
 				<?php } ?>
 			</tbody>
 		</table>
+		<a href="<?=HOST?>order-create" class="button button--save">Оформить заказ</a>
 
 
 

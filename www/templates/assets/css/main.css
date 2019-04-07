@@ -216,8 +216,24 @@ body {
   color: #fff;
 }
 input {
-  outline: none;
-  border: 0;
+/*  outline: none;
+  border: 0;*/
+    -webkit-transition: -webkit-box-shadow 0.2s ease-in;
+  transition: -webkit-box-shadow 0.2s ease-in;
+  -o-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+  border-radius: 4px;
+  border: 1px solid #b1bfc7;
+  background-color: #fff;
+  padding: 5px 15px;
+  margin-top: 10px;
+  width: 100%;
+  color: #000000;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2;
 }
 .buttons-container--ui-kit {
   display: -webkit-box;
@@ -536,6 +552,7 @@ input {
   font-weight: 700;
   cursor: pointer;
   margin-top: 15px;
+  margin-bottom: 30px;
 }
 fieldset {
   border: none;

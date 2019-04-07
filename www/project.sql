@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 04 2019 г., 13:43
+-- Время создания: Апр 07 2019 г., 13:01
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.6.38
 
@@ -87,7 +87,10 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 (4, 16, 1, '1234567', '2019-03-28 21:13:22'),
 (5, 16, 1, '12345', '2019-03-28 21:16:43'),
 (6, 16, 1, 'text', '2019-03-28 21:37:15'),
-(7, 15, 1, '55555', '2019-03-28 21:45:49');
+(7, 15, 1, '55555', '2019-03-28 21:45:49'),
+(8, 15, 7, '41241', '2019-04-07 12:51:26'),
+(9, 9, 7, '124145555', '2019-04-07 12:51:34'),
+(10, 16, 7, 'test', '2019-04-07 12:51:48');
 
 -- --------------------------------------------------------
 
@@ -186,6 +189,39 @@ INSERT INTO `messages` (`id`, `email`, `name`, `message`, `message_file_name_ori
 (4, 'developer8260@gmail.com', 'Алексей', '123', '27bb0b4a26b85a693d36aa77c2889524.zip', '423547363.zip', NULL),
 (5, '123@gma.ru', 'Кексик', '12', '27bb0b4a26b85a693d36aa77c2889524.zip', '151498413.zip', NULL),
 (6, '1251', '52151', '12515', '27bb0b4a26b85a693d36aa77c2889524.zip', '272705078.zip', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `secondname` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `items` text COLLATE utf8mb4_unicode_520_ci,
+  `user_id` int(11) UNSIGNED DEFAULT NULL,
+  `items_count` int(11) UNSIGNED DEFAULT NULL,
+  `total_price` int(11) UNSIGNED DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `payment` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `date_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `name`, `secondname`, `email`, `phone`, `address`, `items`, `user_id`, `items_count`, `total_price`, `status`, `payment`, `date_time`) VALUES
+(1, 'Алексей', 'Фиксик', 'fiksik8260@gmail.com', '555-55-55', '', '[{\"id\":\"1\",\"price\":\"500\",\"count\":1,\"title\":\"\\u0421\\u043e\\u0437\\u0434\\u0430\\u0434\\u0438\\u043c \\u043b\\u0435\\u043d\\u0434\\u0438\\u043d\\u0433 \\u041f\\u041e\\u0414 \\u0412\\u0410\\u0428 \\u0431\\u044e\\u0434\\u0436\\u0435\\u0442, \\u043a\\u0440\\u0443\\u0442\\u043e\\u0439 \\u0438 \\u0441\\u0442\\u0438\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0434\\u0438\\u0437\\u0430\\u0439\\u043d\"}]', 1, NULL, 200, 'new', 'no', '2019-04-07 11:48:59'),
+(2, 'Алексей', 'Фиксик', 'fiksik8260@gmail.com', '555-55-55', '', '[{\"id\":\"1\",\"price\":\"500\",\"count\":3,\"title\":\"\\u0421\\u043e\\u0437\\u0434\\u0430\\u0434\\u0438\\u043c \\u043b\\u0435\\u043d\\u0434\\u0438\\u043d\\u0433 \\u041f\\u041e\\u0414 \\u0412\\u0410\\u0428 \\u0431\\u044e\\u0434\\u0436\\u0435\\u0442, \\u043a\\u0440\\u0443\\u0442\\u043e\\u0439 \\u0438 \\u0441\\u0442\\u0438\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0434\\u0438\\u0437\\u0430\\u0439\\u043d\"}]', 1, 3, 1500, 'new', 'no', '2019-04-07 11:50:04'),
+(3, 'Алексей', 'Фиксик', 'fiksik8260@gmail.com', '555-55-55', 'РБ, г. Гомель', '[{\"id\":\"1\",\"price\":\"500\",\"count\":1,\"title\":\"\\u0421\\u043e\\u0437\\u0434\\u0430\\u0434\\u0438\\u043c \\u043b\\u0435\\u043d\\u0434\\u0438\\u043d\\u0433 \\u041f\\u041e\\u0414 \\u0412\\u0410\\u0428 \\u0431\\u044e\\u0434\\u0436\\u0435\\u0442, \\u043a\\u0440\\u0443\\u0442\\u043e\\u0439 \\u0438 \\u0441\\u0442\\u0438\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0434\\u0438\\u0437\\u0430\\u0439\\u043d\"}]', 1, 1, 500, 'new', 'no', '2019-04-07 12:02:30'),
+(4, 'Алексей', 'Фиксик', 'fiksik8260@gmail.com', '555-55-55', '', '[{\"id\":\"1\",\"price\":\"500\",\"count\":1,\"title\":\"\\u0421\\u043e\\u0437\\u0434\\u0430\\u0434\\u0438\\u043c \\u043b\\u0435\\u043d\\u0434\\u0438\\u043d\\u0433 \\u041f\\u041e\\u0414 \\u0412\\u0410\\u0428 \\u0431\\u044e\\u0434\\u0436\\u0435\\u0442, \\u043a\\u0440\\u0443\\u0442\\u043e\\u0439 \\u0438 \\u0441\\u0442\\u0438\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0434\\u0438\\u0437\\u0430\\u0439\\u043d\"}]', 1, 1, 500, 'new', 'no', '2019-04-07 12:09:45'),
+(5, 'Кексик', 'Фиксик', 'developer8260@gmail.com', '111-11-11', 'РБ, г. Гомель1521', '[{\"id\":\"1\",\"price\":\"500\",\"count\":1,\"title\":\"\\u0421\\u043e\\u0437\\u0434\\u0430\\u0434\\u0438\\u043c \\u043b\\u0435\\u043d\\u0434\\u0438\\u043d\\u0433 \\u041f\\u041e\\u0414 \\u0412\\u0410\\u0428 \\u0431\\u044e\\u0434\\u0436\\u0435\\u0442, \\u043a\\u0440\\u0443\\u0442\\u043e\\u0439 \\u0438 \\u0441\\u0442\\u0438\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0434\\u0438\\u0437\\u0430\\u0439\\u043d\"}]', 7, 1, 500, 'new', 'no', '2019-04-07 12:34:51');
 
 -- --------------------------------------------------------
 
@@ -299,10 +335,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `secondname`, `city`, `country`, `avatar`, `avatar_smail`, `cart`) VALUES
-(1, 'fiksik8260@gmail.com', '$2y$10$jjQjywf2Id/QuL/V/iqbsewVgQqfpoozRRqcqaJNbLwgY/2dkVTbq', 'admin', 'Алексей', 'Фиксик', 'Гомель', 'Республика Беларусь', '839764404.jpg', '48-839764404.jpg', '{\"1\":3,\"2\":1}'),
+(1, 'fiksik8260@gmail.com', '$2y$10$jjQjywf2Id/QuL/V/iqbsewVgQqfpoozRRqcqaJNbLwgY/2dkVTbq', 'admin', 'Алексей', 'Фиксик', 'Гомель', 'Республика Беларусь', '839764404.jpg', '48-839764404.jpg', ''),
 (3, 'test', '$2y$10$WWr3LHD4ogoVJR8c/y8iDOrLNLOQSitnhSiR9jEtayAapED6l9OEi', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (6, 'velcom.ale@gmail.com', '$2y$10$t5JYC20zOShNmGm6WkzZMOMxJZ3kPLNYPcAZzTy97.55gXjsx.fd2', 'admin', 'Админ', 'Админыч', '', '', NULL, NULL, NULL),
-(7, 'developer8260@gmail.com', '$2y$10$M5PbAvwLdrXAb7ZXcNnvou/1cWAp/WziwJ4m5gUPr0Hg3hhabG25y', 'user', 'Кексик', 'Фиксик', 'Москва', 'Россия', '184237670.jpg', '48-184237670.jpg', NULL),
+(7, 'developer8260@gmail.com', '$2y$10$M5PbAvwLdrXAb7ZXcNnvou/1cWAp/WziwJ4m5gUPr0Hg3hhabG25y', 'user', 'Кексик', 'Фиксик', 'Москва', 'Россия', '184237670.jpg', '48-184237670.jpg', ''),
 (8, '123', '$2y$10$aJe.BEk7cNb3r88OJ/Dkl.jKLSeuxFnsQ9Y0bIWRzn9uyppejBKDi', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (9, '123@gma.ru', '$2y$10$DnOXdlOnG1ec9v0SzyYoaOBjb/Pj7FoiQlantXVw17da06r208Bjq', 'user', 'aleksey_an', 'Пользователь', 'папуасы', 'Африка', NULL, NULL, NULL),
 (10, 'dev123@gmail.com', '$2y$10$GWIWSbk2D0vpdmL56ykvOuNN9DqPgBv156QWEhLxfZKmBFxNPDcu6', 'user', 'Кексик', 'Пользователь', '', '', NULL, NULL, NULL);
@@ -356,6 +392,13 @@ ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `index_foreignkey_orders_user` (`user_id`);
+
+--
 -- Индексы таблицы `posts`
 --
 ALTER TABLE `posts`
@@ -400,7 +443,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `contacts`
@@ -425,6 +468,12 @@ ALTER TABLE `jobs`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT для таблицы `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`

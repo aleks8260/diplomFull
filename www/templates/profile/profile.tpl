@@ -20,6 +20,8 @@
 						<div class="profile-user-description__city"><?=@$currentUser->country?>, <?=@$currentUser->city?></div>
 					</div>
 				</div>
+				<h2 class="title-2">Комментарии пользователя</h2>
+				<?php include ROOT . 'templates/profile/_comment-card.tpl'; ?>
 <!--				<h2 class="title-2">Комментарии пользователя</h2>
  				<div class="user-comment mb-10">
 					<div class="user-comment-wrap">
