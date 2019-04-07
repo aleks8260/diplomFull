@@ -1,4 +1,9 @@
 <?php
+// Adjusting text encoding
+function adopt($text) {
+	return '=?UTF-8?B?'.base64_encode($text).'?=';
+}
+
 // Пагинация
 function pagination($results_per_page, $type){
 	$number_of_results = R::count($type);

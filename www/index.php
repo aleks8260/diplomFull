@@ -204,6 +204,19 @@ switch ( $uri[0]) {
 		include ROOT . "modules/orders/myorder.php";
 		break;
 
+	// PAYMENT
+	case 'payment-choice': // заказ по айди выводит пользователю
+		include ROOT . "modules/payments/payment-choice.php";
+		break;
+
+	case 'payment-yandex': // для олпаты яндекс
+		include ROOT . "modules/payments/yandex-payment.php";
+		break;
+
+	case 'after-payment': // перенаправление об успешной оплате
+		include ROOT . "modules/payments/after-payment.php";
+		break;
+
 
 
 	default:
